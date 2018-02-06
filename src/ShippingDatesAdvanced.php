@@ -8,7 +8,6 @@ namespace Jh\Shipping;
  */
 class ShippingDatesAdvanced implements ShippingDatesInterface
 {
-
     const SATURDAY = 6;
     const SUNDAY = 0;
     const DAYS_TO_DELIVER = 3;
@@ -59,7 +58,7 @@ class ShippingDatesAdvanced implements ShippingDatesInterface
         $day = $tempDate->format('w');
         if ($day == self::SATURDAY) {
             $tempDate->add(new \DateInterval('P2D'));
-        } else if ($day == self::SUNDAY) {
+        } elseif ($day == self::SUNDAY) {
             $tempDate->add(new \DateInterval('P1D'));
         }
 
